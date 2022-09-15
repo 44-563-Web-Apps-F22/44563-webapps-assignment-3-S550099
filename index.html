@@ -57,12 +57,21 @@
 <hr>
 <h2>code snippet</h2>
 <blockquote>
-    <a href="https://stackoverflow.com/questions/11261883/how-to-get-wordpress-post-featured-image-url">How to get WordPress post featured image URL in stackoverflow</a>
+    <a href="https://stackoverflow.com/editing-help">Markdown help using stackoverflow</a>
 </blockquote>
 <pre>
-    <a href="#" rel="prettyPhoto">
-        <?php the_post_thumbnail('thumbnail'); ?>
-    </a>
+    <?php
+function my_custom_comments($comment, $args, $depth) {
+   $GLOBALS['comment'] = $comment; ?>
+   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+   <?php if ($comment->comment_approved == '0') : ?>
+      <em><?php _e('Your comment is awaiting moderation.') ?></em>
+   <?php endif; ?>
+
+   // Comments markup code here, e.g. functions like comment_text(); 
+
+}
+?>
 </pre>
 </body>
 </html>
