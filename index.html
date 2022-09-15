@@ -55,23 +55,14 @@
 </table>
 
 <hr>
-<h2> code snippet</h2>
+<h2>code snippet</h2>
 <blockquote>
-    <a href="https://wordpress.stackexchange.com/questions/44672/exclude-the-category-from-the-wordpress-loop">Exclude the category from the WordPress loop in stackoverflow</a>
+    <a href="https://stackoverflow.com/questions/11261883/how-to-get-wordpress-post-featured-image-url">How to get WordPress post featured image URL in stackoverflow</a>
 </blockquote>
 <pre>
-    <?php if(have_posts()): ?>
-
-    <ol class="item_lists">
-
-        <?php
-        $end = array(3,6,9,12,15,18,21,24,27,30,33,36,39,42,45);
-        $i = 0;
-
-        while (have_posts()) : the_post();
-           $i++;
-           global $post;
-     ?>
+    <a href="#" rel="prettyPhoto">
+        <?php the_post_thumbnail('thumbnail'); ?>
+    </a>
 </pre>
 </body>
 </html>
